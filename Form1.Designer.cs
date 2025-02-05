@@ -88,6 +88,7 @@
             Controls.Add(Login_label);
             Controls.Add(button1);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Вход";
             ResumeLayout(false);
             PerformLayout();

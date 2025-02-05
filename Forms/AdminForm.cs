@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using User = Lib.Class.User;
 
 namespace Lib.Forms
 {
@@ -17,7 +18,7 @@ namespace Lib.Forms
     {
 
         public Form1 _form1;
-       
+
         public AdminForm()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace Lib.Forms
             InitializeComponent();
             AdminlistBox.DataSource = UserDataBase.GetUserBase();
             this._form1 = form1;
-            this.FormClosed += (s,args)=>_form1.Show();
+            this.FormClosed += (s, args) => _form1.Show();
             Exitbutton.Click += (s, args) =>
             {
                 _form1.Show();
@@ -36,13 +37,14 @@ namespace Lib.Forms
             };
         }
 
-         private void UpdateListBox()
+        public void UpdateListBox()
         {
-            AdminlistBox.DataSource = null; 
-            AdminlistBox.DataSource = UserDataBase.GetUserBase(); 
-            
+            AdminlistBox.DataSource = null;
+            AdminlistBox.DataSource = UserDataBase.GetUserBase();
+
         }
 
+        public User SelectedUser => AdminlistBox.SelectedItem as User;
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -51,6 +53,37 @@ namespace Lib.Forms
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdditionForm additionForm = new AdditionForm(this, true);
+            additionForm.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AdditionForm additionForm = new AdditionForm(this, false);
+            additionForm.Show();
+            this.Hide();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var selectedUser = AdminlistBox.SelectedItem as User;
+
+            if (selectedUser is Admin)
+            {
+                MessageBox.Show("Функция удаления Админа временно недоступна");
+                return;
+            }
+
+            UserDataBase.DeleteUser(selectedUser);
+
+            UpdateListBox();
 
         }
     }

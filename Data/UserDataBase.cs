@@ -24,13 +24,15 @@ namespace Lib.Data
             UserBase.Add(user);
         }
 
-        public static void RemoveUser(User user) 
+        public static void ChangingUser(User user)
         {
+           
+            
         }
 
         public static void DeleteUser(User user)
         {
-            
+            UserBase.Remove(user);
         }
 
     }

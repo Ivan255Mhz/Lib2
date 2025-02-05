@@ -65,29 +65,32 @@
             button1.TabIndex = 1;
             button1.Text = "Добавить";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(138, 403);
+            button2.Location = new Point(18, 444);
             button2.Name = "button2";
             button2.Size = new Size(114, 35);
             button2.TabIndex = 2;
             button2.Text = "Удалить";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(258, 403);
+            button3.Location = new Point(162, 403);
             button3.Name = "button3";
             button3.Size = new Size(114, 35);
             button3.TabIndex = 3;
             button3.Text = "Изменить";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // Exitbutton
             // 
             Exitbutton.BackColor = Color.Red;
-            Exitbutton.Location = new Point(668, 403);
+            Exitbutton.Location = new Point(620, 403);
             Exitbutton.Name = "Exitbutton";
             Exitbutton.Size = new Size(114, 35);
             Exitbutton.TabIndex = 4;
@@ -127,6 +130,7 @@
             Controls.Add(button1);
             Controls.Add(groupBox1);
             Name = "AdminForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Администратор";
             Load += AdminForm_Load;
             groupBox1.ResumeLayout(false);
