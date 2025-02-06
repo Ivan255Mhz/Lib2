@@ -28,12 +28,22 @@ namespace Lib
                 return;
             }
 
-            if (user is Admin admin) 
+            if (user is Admin admin)
             {
                 AdminForm adminForm = new AdminForm(this);
                 adminForm.Show();
             }
+            if(user is Worker worker)
+            {
+                WorkerForm workerForm = new WorkerForm(this);
+                workerForm.Show();
+            }
             this.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

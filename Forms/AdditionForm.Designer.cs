@@ -129,7 +129,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(374, 433);
+            ClientSize = new Size(374, 366);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label4);
@@ -143,6 +143,7 @@
             Name = "AdditionForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "AdditionForm";
+            Load += AdditionForm_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }

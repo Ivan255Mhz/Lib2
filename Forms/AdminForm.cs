@@ -65,6 +65,15 @@ namespace Lib.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            var selectedUser = AdminlistBox.SelectedItem as User;
+
+            if (selectedUser is Admin)
+            {
+                MessageBox.Show("Функция изменения Админа временно недоступна");
+                return;
+            }
+
             AdditionForm additionForm = new AdditionForm(this, false);
             additionForm.Show();
             this.Hide();

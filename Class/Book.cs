@@ -32,7 +32,7 @@ namespace Lib.Class
 
 
         public override string ToString() =>
-            $"Название: {name} Издатель: {publisher} Жанр:{genre} Старниц:{pages} ";
+            $"Название:   {name} Издатель:   {publisher} Жанр: {genre} Старниц:  {pages} ";
         
     }
 }

@@ -74,6 +74,7 @@
             // 
             Password_textBox.Location = new Point(144, 143);
             Password_textBox.Name = "Password_textBox";
+            Password_textBox.PasswordChar = '*';
             Password_textBox.Size = new Size(306, 27);
             Password_textBox.TabIndex = 4;
             // 
@@ -90,6 +91,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Вход";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -11,7 +11,8 @@ namespace Lib.Data
     {
         public static List<User> UserBase = new List<User>
         {
-            new Admin("ivan","admin","12345")
+            new Admin("ivan","admin","12345"),
+            new Worker("vova","1","1")
         };
 
         public static List<User> GetUserBase() 
@@ -24,7 +25,7 @@ namespace Lib.Data
             UserBase.Add(user);
         }
 
-        public static void ChangingUser(User user)
+       public static void ChangingUser(User user) // надо оптемезировать 
         {
            
             

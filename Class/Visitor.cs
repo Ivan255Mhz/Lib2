@@ -8,12 +8,17 @@ namespace Lib.Class
 {
     public class Visitor:User
     {
+        public List<Book> userBooks=new List<Book>();
         public override string ToString() =>
            $"Имя: {name} Логин: {login} Учетная запись: {nameof(Visitor)}";
         public Visitor()
         {
         }
 
+        public void AddBook(Book book)
+        {
+            userBooks.Add(book);
+        }
         public Visitor(string name, string login, string password)
         {
             this.name = name;

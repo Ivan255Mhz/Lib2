@@ -51,7 +51,7 @@ namespace Lib.Forms
 
         }
 
-      
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -65,11 +65,16 @@ namespace Lib.Forms
             string name = AddNameBox.Text;
             string password = AddPasswordBox.Text;
             string login = AddLoginBox.Text;
-            
+
+            if (name == string.Empty || password == string.Empty || login == string.Empty)
+            {
+                MessageBox.Show("Заполните все поля", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             //                                       ТУТ ПОШЛИ КОСТЫЛИ  НО РАБОТАЕТ :)
             switch (TypeComboBox.SelectedIndex)
             {
+
                 case 0:
                     if (_addEdit)
                     {
@@ -121,6 +126,11 @@ namespace Lib.Forms
 
                     return;
             }
+
+        }
+
+        private void AdditionForm_Load_1(object sender, EventArgs e)
+        {
 
         }
     }
