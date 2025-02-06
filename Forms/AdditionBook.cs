@@ -52,10 +52,10 @@ namespace Lib.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string Name = _workerForm.SelectedUser.name;
-            string Genre = _workerForm.SelectedUser.genre;
-            int Pages = _workerForm.SelectedUser.pages;
-            string Publisher = _workerForm.SelectedUser.publisher;
+            string Name =NameTextBox.Text;
+            string Genre =GenreTextBox.Text ;
+            int Pages = (int)PagesNumeric.Value;
+            string Publisher =PublisherTextBox.Text;
 
             if(Name==string.Empty||Genre==string.Empty||Publisher==string.Empty)
             {

@@ -29,7 +29,7 @@ namespace Lib.Forms
         public void UpdateListBox()
         {
             WorkerListBox.DataSource = null;
-            WorkerListBox.DataSource = UserDataBase.GetUserBase();
+            WorkerListBox.DataSource = BookDataBase.GetBookBase();
         }
 
         public Book SelectedUser => WorkerListBox.SelectedItem as Book;
