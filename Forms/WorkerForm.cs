@@ -20,7 +20,7 @@ namespace Lib.Forms
         {
             InitializeComponent();
             WorkerListBox.DataSource = BookDataBase.GetBookBase();
-            _form1 = form1;
+           
             this._form1 = form1;
             this.FormClosed += (s, args) => _form1.Show();
 
@@ -57,6 +57,13 @@ namespace Lib.Forms
         {
             BookDataBase.DeleteBook(WorkerListBox.SelectedItem as Book);
             this.UpdateListBox();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SetBookForm setBookForm = new SetBookForm(this);
+            setBookForm.Show();
+            this.Hide();
         }
     }
 }

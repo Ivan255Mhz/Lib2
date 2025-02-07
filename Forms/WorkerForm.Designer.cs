@@ -37,27 +37,32 @@
             button5 = new Button();
             button6 = new Button();
             dateTimePicker1 = new DateTimePicker();
+            button7 = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button7);
             groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(WorkerListBox);
-            groupBox1.Location = new Point(12, 12);
+            groupBox1.Location = new Point(10, 9);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(692, 345);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(606, 259);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Книги";
             // 
             // button3
             // 
-            button3.Location = new Point(556, 294);
+            button3.Location = new Point(486, 220);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(122, 39);
+            button3.Size = new Size(107, 29);
             button3.TabIndex = 3;
             button3.Text = "Удалить";
             button3.UseVisualStyleBackColor = true;
@@ -65,9 +70,10 @@
             // 
             // button2
             // 
-            button2.Location = new Point(556, 94);
+            button2.Location = new Point(486, 70);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(122, 39);
+            button2.Size = new Size(107, 29);
             button2.TabIndex = 2;
             button2.Text = "Изменить";
             button2.UseVisualStyleBackColor = true;
@@ -75,9 +81,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(556, 39);
+            button1.Location = new Point(486, 29);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(122, 39);
+            button1.Size = new Size(107, 29);
             button1.TabIndex = 1;
             button1.Text = "Добить";
             button1.UseVisualStyleBackColor = true;
@@ -86,55 +93,73 @@
             // WorkerListBox
             // 
             WorkerListBox.FormattingEnabled = true;
-            WorkerListBox.Location = new Point(6, 29);
+            WorkerListBox.ItemHeight = 15;
+            WorkerListBox.Location = new Point(5, 22);
+            WorkerListBox.Margin = new Padding(3, 2, 3, 2);
             WorkerListBox.Name = "WorkerListBox";
-            WorkerListBox.Size = new Size(544, 304);
+            WorkerListBox.Size = new Size(476, 229);
             WorkerListBox.TabIndex = 0;
             // 
             // button4
             // 
-            button4.Location = new Point(21, 367);
+            button4.Location = new Point(18, 275);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(124, 54);
+            button4.Size = new Size(108, 40);
             button4.TabIndex = 1;
             button4.Text = "Импорт";
             button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            button5.Location = new Point(151, 367);
+            button5.Location = new Point(132, 275);
+            button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
-            button5.Size = new Size(124, 54);
+            button5.Size = new Size(108, 40);
             button5.TabIndex = 2;
             button5.Text = "Экспорт";
             button5.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            button6.Location = new Point(438, 367);
+            button6.Location = new Point(383, 275);
+            button6.Margin = new Padding(3, 2, 3, 2);
             button6.Name = "button6";
-            button6.Size = new Size(124, 54);
+            button6.Size = new Size(108, 40);
             button6.TabIndex = 3;
             button6.Text = "Выдать Книгу";
             button6.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(21, 433);
+            dateTimePicker1.Location = new Point(18, 325);
+            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
+            dateTimePicker1.Size = new Size(219, 23);
             dateTimePicker1.TabIndex = 4;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(486, 136);
+            button7.Margin = new Padding(3, 2, 3, 2);
+            button7.Name = "button7";
+            button7.Size = new Size(107, 29);
+            button7.TabIndex = 4;
+            button7.Text = "Настроить";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // WorkerForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(723, 472);
+            ClientSize = new Size(633, 354);
             Controls.Add(dateTimePicker1);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(groupBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "WorkerForm";
             Text = "WorkerForm";
             Load += WorkerForm_Load;
@@ -153,5 +178,6 @@
         private Button button5;
         private Button button6;
         private DateTimePicker dateTimePicker1;
+        private Button button7;
     }
 }
