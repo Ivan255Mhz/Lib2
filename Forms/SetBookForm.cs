@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,10 @@ namespace Lib.Forms
 
             BookGroupBox.Text = _workerForm.SelectedUser.name;
             BooktextBox.Text = _workerForm.SelectedUser.text;
+            BooktextBox.BackColor = _workerForm.SelectedUser.BackColor;
+            BooktextBox.ForeColor = _workerForm.SelectedUser.TextColor;
+            BooktextBox.Font = _workerForm.SelectedUser.Font;
+
 
             this.FormClosed += (s, args) => _workerForm.Show();
         }
@@ -94,7 +99,70 @@ namespace Lib.Forms
 
         private void зеленыйToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            BooktextBox.ForeColor= Color.Green;
+            BooktextBox.ForeColor = Color.Green;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BooktextBox.BackColor = Color.White;
+            BooktextBox.ForeColor = Color.Black;
+            BooktextBox.Font= new Font("Segoe UI", 9);
+        }
+
+        private void segoeUIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            float size = _workerForm.SelectedUser.Font.Size;
+            _workerForm.SelectedUser.Font = new Font("Segoe UI", size);
+            BooktextBox.Font = _workerForm.SelectedUser.Font;
+        }
+
+        private void tahomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            float size = _workerForm.SelectedUser.Font.Size;
+            _workerForm.SelectedUser.Font = new Font("Tahoma", size);
+            BooktextBox.Font = _workerForm.SelectedUser.Font;
+        }
+
+        private void simSumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            float size = _workerForm.SelectedUser.Font.Size;
+            _workerForm.SelectedUser.Font = new Font("SimSum", size);
+            BooktextBox.Font = _workerForm.SelectedUser.Font;
+        }
+
+        private void timesNewRomanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            float size = _workerForm.SelectedUser.Font.Size;
+            _workerForm.SelectedUser.Font = new Font("Times New Roman", size);
+            BooktextBox.Font = _workerForm.SelectedUser.Font;
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            string fontName = _workerForm.SelectedUser.Font.FontFamily.Name;
+            _workerForm.SelectedUser.Font = new Font(fontName, 9);
+            BooktextBox.Font = _workerForm.SelectedUser.Font;
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            string fontName = _workerForm.SelectedUser.Font.FontFamily.Name;
+            _workerForm.SelectedUser.Font = new Font(fontName, 10);
+            BooktextBox.Font = _workerForm.SelectedUser.Font;
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            string fontName = _workerForm.SelectedUser.Font.FontFamily.Name;
+            _workerForm.SelectedUser.Font = new Font(fontName, 11);
+            BooktextBox.Font = _workerForm.SelectedUser.Font;
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            string fontName = _workerForm.SelectedUser.Font.FontFamily.Name;
+            _workerForm.SelectedUser.Font = new Font(fontName, 12);
+            BooktextBox.Font = _workerForm.SelectedUser.Font;
         }
     }
 }

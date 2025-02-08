@@ -9,20 +9,16 @@ namespace Lib.Class
 {
     public class Book
     {
-        public Font Font { get; set; }
+        public Font Font = new Font("Segoe UI", 9);
 
         public Color BackColor { get; set; }
 
         public Color TextColor { get; set; }
-        public string style {  get; set; }
-
-        public int textSize { get; set; }
-
         public string text { get; set; }
 
-        public string name {  get; set; }
+        public string name { get; set; }
 
-        public int pages { get; set; }  
+        public int pages { get; set; }
 
         public string genre { get; set; }
 
@@ -41,9 +37,9 @@ namespace Lib.Class
             this.publisher = publisher;
         }
 
-        
+
         public override string ToString() =>
             $"Название:   {name} Издатель:   {publisher} Жанр: {genre} Старниц:  {pages} ";
-        
+
     }
 }
