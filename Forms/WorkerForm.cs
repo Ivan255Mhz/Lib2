@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Lib.Forms
 {
@@ -16,11 +17,13 @@ namespace Lib.Forms
     {
 
         public Form1 _form1;
+       
+
         public WorkerForm(Form1 form1)
         {
             InitializeComponent();
             WorkerListBox.DataSource = BookDataBase.GetBookBase();
-           
+
             this._form1 = form1;
             this.FormClosed += (s, args) => _form1.Show();
 
@@ -32,13 +35,20 @@ namespace Lib.Forms
             WorkerListBox.DataSource = BookDataBase.GetBookBase();
         }
 
+        public List<Visitor> VisitorsOnly()
+        {
+            List<User> allUsers = UserDataBase.UserBase;
+            var  visitorsOnly = allUsers.Where(user => user is Visitor).Cast<Visitor>().ToList();
+            return visitorsOnly;
+        }
+
         public Book SelectedUser => WorkerListBox.SelectedItem as Book;
 
         private void WorkerForm_Load(object sender, EventArgs e)
         {
-
         }
 
+        
         private void button1_Click(object sender, EventArgs e)
         {
             var additionBook = new AdditionBook(this, true);
@@ -63,6 +73,13 @@ namespace Lib.Forms
         {
             SetBookForm setBookForm = new SetBookForm(this);
             setBookForm.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            BookDeliveryForm bookDeliveryForm = new BookDeliveryForm(this);
+            bookDeliveryForm.Show();
             this.Hide();
         }
     }

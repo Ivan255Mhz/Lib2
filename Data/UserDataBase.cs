@@ -12,7 +12,8 @@ namespace Lib.Data
         public static List<User> UserBase = new List<User>
         {
             new Admin("ivan","admin","12345"),
-            new Worker("vova","1","1")
+            new Worker("vova","1","1"),
+            new Visitor("vika","2","3")
         };
 
         public static List<User> GetUserBase() 
