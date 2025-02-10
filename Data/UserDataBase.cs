@@ -13,7 +13,7 @@ namespace Lib.Data
         {
             new Admin("ivan","admin","12345"),
             new Worker("vova","1","1"),
-            new Visitor("vika","2","3")
+            new Visitor("vika","2","2")
         };
 
         public static List<User> GetUserBase() 
@@ -23,6 +23,7 @@ namespace Lib.Data
 
         public static void AddUser(User user)
         {
+            
             UserBase.Add(user);
         }
 

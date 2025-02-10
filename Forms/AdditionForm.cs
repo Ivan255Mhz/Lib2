@@ -66,6 +66,14 @@ namespace Lib.Forms
             string password = AddPasswordBox.Text;
             string login = AddLoginBox.Text;
 
+            bool isLoginExists = UserDataBase.UserBase.Any(user =>
+            string.Equals(user.login, password));
+            if (isLoginExists) 
+            {
+                MessageBox.Show("Пользователь с таким логином уже сущесвует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (name == string.Empty || password == string.Empty || login == string.Empty)
             {
                 MessageBox.Show("Заполните все поля", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -23,6 +23,7 @@ namespace Lib.Forms
             BooklistBox.DataSource = visitor.userBooks;
             BooklistBox.DisplayMember = nameof(Book.name);
             BooklistBox.SelectedIndexChanged += BooklistBox_SelectedIndexChanged;
+            numericFond.ValueChanged += NumericUpDown1_ValueChanged;
             NametextBox.Text = visitor.name;
             UpdateTextBox();
 
@@ -30,6 +31,15 @@ namespace Lib.Forms
 
         private void BooklistBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            UpdateTextBox();
+        }
+
+
+        private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            var selectedBook = BooklistBox.SelectedItem as Book;
+
+            selectedBook.Font=new Font (selectedBook.Font.FontFamily.Name,(int)numericFond.Value);
             UpdateTextBox();
         }
 
@@ -42,6 +52,7 @@ namespace Lib.Forms
                 BookTextBox.BackColor = selectedBook.BackColor;
                 BookTextBox.ForeColor = selectedBook.TextColor;
                 BookTextBox.Font = selectedBook.Font;
+                numericFond.Value = (decimal)selectedBook.Font.Size;
             }
             else
             {

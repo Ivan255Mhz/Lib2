@@ -35,10 +35,10 @@
             label1 = new Label();
             NametextBox = new TextBox();
             label2 = new Label();
-            numericUpDown1 = new NumericUpDown();
+            numericFond = new NumericUpDown();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericFond).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -103,19 +103,19 @@
             label2.TabIndex = 4;
             label2.Text = "Шрифт";
             // 
-            // numericUpDown1
+            // numericFond
             // 
-            numericUpDown1.Location = new Point(446, 25);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(106, 27);
-            numericUpDown1.TabIndex = 5;
+            numericFond.Location = new Point(446, 25);
+            numericFond.Name = "numericFond";
+            numericFond.Size = new Size(106, 27);
+            numericFond.TabIndex = 5;
             // 
             // VisitorForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(692, 548);
-            Controls.Add(numericUpDown1);
+            Controls.Add(numericFond);
             Controls.Add(label2);
             Controls.Add(NametextBox);
             Controls.Add(label1);
@@ -126,7 +126,7 @@
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericFond).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -138,7 +138,7 @@
         private Label label1;
         private TextBox NametextBox;
         private Label label2;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown numericFond;
         private TextBox BookTextBox;
         private ListBox BooklistBox;
     }
