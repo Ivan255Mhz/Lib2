@@ -36,6 +36,7 @@
             NametextBox = new TextBox();
             label2 = new Label();
             numericFond = new NumericUpDown();
+            button1 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericFond).BeginInit();
@@ -110,11 +111,22 @@
             numericFond.Size = new Size(106, 27);
             numericFond.TabIndex = 5;
             // 
+            // button1
+            // 
+            button1.Location = new Point(18, 538);
+            button1.Name = "button1";
+            button1.Size = new Size(190, 39);
+            button1.TabIndex = 6;
+            button1.Text = "Вернкть книгу ";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // VisitorForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(692, 548);
+            ClientSize = new Size(678, 597);
+            Controls.Add(button1);
             Controls.Add(numericFond);
             Controls.Add(label2);
             Controls.Add(NametextBox);
@@ -141,5 +153,6 @@
         private NumericUpDown numericFond;
         private TextBox BookTextBox;
         private ListBox BooklistBox;
+        private Button button1;
     }
 }

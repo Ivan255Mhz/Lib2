@@ -1,4 +1,5 @@
 ﻿using Lib.Class;
+using Lib.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,7 +40,7 @@ namespace Lib.Forms
         {
             var selectedBook = BooklistBox.SelectedItem as Book;
 
-            selectedBook.Font=new Font (selectedBook.Font.FontFamily.Name,(int)numericFond.Value);
+            selectedBook.Font = new Font(selectedBook.Font.FontFamily.Name, (int)numericFond.Value);
             UpdateTextBox();
         }
 
@@ -60,6 +61,15 @@ namespace Lib.Forms
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Visitor visitor = (Visitor)_form1.User;
+            var selectedBook = BooklistBox.SelectedItem as Book;
+            BookDataBase.books.Add(selectedBook);
+            visitor.userBooks.Remove(selectedBook);
+            UpdateTextBox();
+            this.Close();
 
+        }
     }
 }
