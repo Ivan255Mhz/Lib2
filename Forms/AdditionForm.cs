@@ -80,7 +80,7 @@ namespace Lib.Forms
                 return; 
             }
 
-            //                                       
+                                                   
             switch (TypeComboBox.SelectedIndex)
             {
                 case 0:

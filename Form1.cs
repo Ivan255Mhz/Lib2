@@ -61,19 +61,19 @@ namespace Lib
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //var loadedUsers = JsonSaveLoadData.LoadDataUser(userJson);
-            //if (loadedUsers != null && loadedUsers.Any())
-            //{
-            //    UserDataBase.UserBase = loadedUsers;
-            //}
+            var loadedUsers = JsonSaveLoadData.LoadDataUser(userJson);
+            if (loadedUsers != null && loadedUsers.Any())
+            {
+                UserDataBase.UserBase = loadedUsers;
+            }
 
 
-            //var loadedBooks = JsonSaveLoadData.LoadDataBook(bookJson);
-            //if (loadedBooks != null && loadedBooks.Any())
-            //{
-            //    BookDataBase.books = loadedBooks;
+            var loadedBooks = JsonSaveLoadData.LoadDataBook(bookJson);
+            if (loadedBooks != null && loadedBooks.Any())
+            {
+                BookDataBase.books = loadedBooks;
 
-            //}
+            }
 
         }
     }
