@@ -27,8 +27,9 @@ namespace Lib.Forms
         public AdminForm(Form1 form1)
         {
             InitializeComponent();
-            AdminlistBox.DataSource = UserDataBase.GetUserBase();
+            
             this._form1 = form1;
+            AdminlistBox.DataSource = UserDataBase.GetUserBase();
             this.FormClosed += (s, args) => _form1.Show();
             Exitbutton.Click += (s, args) =>
             {

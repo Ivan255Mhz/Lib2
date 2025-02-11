@@ -8,7 +8,7 @@ namespace Lib.Class
 {
     public class Admin : User
     {
-
+        public string AccessLevel { get; set; }
         public override string ToString() =>
             $"Имя: {name} Логин: {login} Учетная запись: {nameof(Admin)}";
         public Admin()

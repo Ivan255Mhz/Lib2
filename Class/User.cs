@@ -16,8 +16,7 @@ namespace Lib.Class
 
         public string password { get; set; }
 
-        public override string ToString() =>
-            $"Имя: {name} Логин: {login}";
+        
 
         public User()
         {
