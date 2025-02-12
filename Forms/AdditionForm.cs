@@ -67,74 +67,52 @@ namespace Lib.Forms
             string login = AddLoginBox.Text;
 
             bool isLoginExists = UserDataBase.UserBase.Any(user =>
-            string.Equals(user.login, password));
+            string.Equals(user.login, login));
             if (isLoginExists) 
             {
                 MessageBox.Show("Пользователь с таким логином уже сущесвует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (name == string.Empty || password == string.Empty || login == string.Empty)
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(login))
             {
                 MessageBox.Show("Заполните все поля", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
             }
 
-            //                                       ТУТ ПОШЛИ КОСТЫЛИ  НО РАБОТАЕТ :)
+                                                   
             switch (TypeComboBox.SelectedIndex)
             {
-
                 case 0:
-                    if (_addEdit)
-                    {
-                        UserDataBase.AddUser(new Admin(name, login, password));
-                        _adminform.UpdateListBox();
-                        this.Close();
-                    }
-                    else
-                    {
-                        UserDataBase.DeleteUser(_adminform.SelectedUser);
-                        UserDataBase.AddUser(new Admin(name, login, password));
-                        _adminform.UpdateListBox();
-                        this.Close();
-                    }
+                    AddOrUpdateUser(new Admin(name, login, password));
                     break;
                 case 1:
-                    if (_addEdit)
-                    {
-                        UserDataBase.AddUser(new Worker(name, login, password));
-                        _adminform.UpdateListBox();
-                        this.Close();
-                    }
-                    else
-                    {
-                        UserDataBase.DeleteUser(_adminform.SelectedUser);
-                        UserDataBase.AddUser(new Worker(name, login, password));
-                        _adminform.UpdateListBox();
-                        this.Close();
-                    }
+                    AddOrUpdateUser(new Worker(name, login, password));
                     break;
                 case 2:
-                    if (_addEdit)
-                    {
-                        UserDataBase.AddUser(new User(name, login, password));
-                        _adminform.UpdateListBox();
-                        this.Close();
-                    }
-                    else
-                    {
-                        UserDataBase.DeleteUser(_adminform.SelectedUser);
-                        UserDataBase.AddUser(new User(name, login, password));
-                        _adminform.UpdateListBox();
-                        this.Close();
-                    }
+                    AddOrUpdateUser(new Visitor(name, login, password));
                     break;
                 default:
-
                     MessageBox.Show("Вы не выбрали тип пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    return;
+                    break;
             }
 
+        }
+
+        private void AddOrUpdateUser(User newUser)
+        {
+            if (_addEdit)
+            {
+                UserDataBase.AddUser(newUser);
+            }
+            else
+            {
+                UserDataBase.DeleteUser(_adminform.SelectedUser);
+                UserDataBase.AddUser(newUser);
+            }
+
+            _adminform.UpdateListBox();
+            this.Close();
         }
 
         private void AdditionForm_Load_1(object sender, EventArgs e)

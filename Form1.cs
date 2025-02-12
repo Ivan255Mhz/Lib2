@@ -1,4 +1,5 @@
 using Lib.Class;
+using Lib.Class;
 using Lib.Data;
 using Lib.Forms;
 
@@ -7,9 +8,16 @@ namespace Lib
     public partial class Form1 : Form
     {
         public User User { get; set; }
+
+        private  const string userJson = "user.json";
+
+        private  const string bookJson = "book.json";
+
         public Form1()
         {
             InitializeComponent();
+            this.FormClosed += (s, args) => JsonSaveLoadData.SaveDataUser(userJson, UserDataBase.GetUserBase());
+            this.FormClosed += (s, args) => JsonSaveLoadData.SaveDataBook(bookJson, BookDataBase.GetBookBase());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,21 +42,38 @@ namespace Lib
                 AdminForm adminForm = new AdminForm(this);
                 adminForm.Show();
             }
-            if (this.User is Worker worker)
+            else if (this.User is Worker worker)
             {
                 WorkerForm workerForm = new WorkerForm(this);
                 workerForm.Show();
             }
-            if (this.User is Visitor visitor) 
+            else if (this.User is Visitor visitor)
             {
                 VisitorForm visitorForm = new VisitorForm(this);
                 visitorForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Неизвестный тип пользователя.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            var loadedUsers = JsonSaveLoadData.LoadDataUser(userJson);
+            if (loadedUsers != null && loadedUsers.Any())
+            {
+                UserDataBase.UserBase = loadedUsers;
+            }
+
+
+            var loadedBooks = JsonSaveLoadData.LoadDataBook(bookJson);
+            if (loadedBooks != null && loadedBooks.Any())
+            {
+                BookDataBase.books = loadedBooks;
+
+            }
 
         }
     }

@@ -10,6 +10,8 @@ namespace Lib.Class
 {
     public class Worker:User
     {
+
+        public string Department { get; set; }
         public override string ToString() =>
            $"Имя: {name} Логин: {login} Учетная запись: {nameof(Worker)}";
         public Worker()
